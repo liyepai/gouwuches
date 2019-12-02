@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+
+</body>
+<script>
+/*
+  作用域
+    是什么?
+      变量或者函数的有效范围 ， 在哪里可以使用，就是它的有效范围
+
+    直接在script标签下定义的函数或者是变量，有效范围是任何位置，这种称为全局作用域，这种可以被任何位置访问的变量和函数称为 全局变量，全局函数
+
+    在函数里面定义的变量，只能够在它当前的函数内部使用，这种作用范围 —— 局部作用范围(局部作用域)
+    只能在某个局部作用域里面使用的变量或者是函数，称为 局部变量 局部函数
+
+    - 作用域有两个
+      - 全局
+      - 局部
+    - 全局变量和全局函数，可以在任何位置使用
+    - 局部变量和局部函数，只能在当前的作用域里面使用
+
+
+*/
+
+// var a = 10;
+// function f1(){
+//   console.log(a);
+// }
+// f1();
+// console.log(a);
+
+// /*  */
+// function f2(){
+//   var b = 20;
+//   console.log(b);
+// }
+// f2();
+// console.log(b);
+
+
+
+function f3(){
+  var c = 30;
+  function f4(){
+    var d = 40;
+    console.log(c);
+    console.log(d);
+  }
+  f4();
+  console.log(c);
+  console.log(d);
+}
+f3();
+f4();
+
+// 函数的参数，也相当于是局部变量
+function f5(a,b,c){
+  console.log(a,b,c);
+}
+f5(10,20,30);
+console.log(a,b,c);
+
+</script>
+</html>

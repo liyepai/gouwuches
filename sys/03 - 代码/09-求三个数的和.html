@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+
+</body>
+<script>
+/*
+  要求使用函数的方式求3个数的和
+
+*/
+
+// 求两个数的和
+function getSum1(num1,num2){
+  var sum = num1 + num2;
+  return sum;
+}
+
+// 求三个数的和
+// function getSum2(num1,num2,num3){
+//   var sum = num1 + num2 + num3;
+//   return sum;
+// }
+
+
+/* 我们希望把写过的函数，在另一个函数里面使用
+  1. 在函数中，可以调用别的函数
+  2. 函数被调用了，会跳转到定义的函数里面先执行，执行完毕，会跳转回被调用的位置继续执行
+*/
+function getSum2(num1,num2,num3){
+  var sum = getSum1(num1,num2) + num3;
+  return sum;
+}
+console.log(getSum2(10,20,30));
+</script>
+</html>

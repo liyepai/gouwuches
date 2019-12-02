@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+
+</body>
+<script>
+/*
+  预解析
+    是什么?
+      js是一门脚本语言，脚本语言有一个特点 —— 解释一行，执行一行，如果执行到某一行出错了，就停止解析执行
+
+    但是js其实在把代码解释执行之前，会有一个预解析的过程
+      预解析把变量声明和函数声明提升到当前作用域的最顶端，然后变量的赋值和函数的调用还在原来的位置
+*/
+
+// var a = 10;
+// /* 预解析之后是这样的 */
+// var a;
+// a = 10;
+
+// /* 如果是函数 */
+// f1();
+// function f1(){
+// }
+// /* 预解析会把函数的声明放到当前作用域的最顶端 */
+// function f1(){
+// }
+// f1();
+
+/* 为什么 关键字声明的函数可以在之前调用，而函数表达式声明的，不行 */
+f2();
+function f2(){
+  console.log(123);
+}
+f3();
+var f3 = function(){
+  console.log(456);
+}
+// 以上是我们看到的代码，但是经过了预解析，就不是这样的了
+/* 预解析之后的代码 */
+// 把变量和函数的声明，放到作用域的最顶端
+function f2(){
+  console.log(123);
+}
+var f3; // 变量声明了没有赋值，默认是undefined
+// 函数的调用和变量的赋值，还在原来的位置
+f2();
+f3(); // 相当于是把 undefined当初函数调用，报错就告诉你，f3不是一个函数
+f3 = function(){
+  console.log(456);
+}
+// 这是预解析之后看到的代码
+</script>
+</html>

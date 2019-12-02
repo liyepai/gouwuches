@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    .box {
+      width: 100px;
+      height: 100px;
+      background-color: red;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="box"></div>
+
+</body>
+<script>
+/*
+  匿名函数
+    没有名字的函数
+
+    function (参数){ 函数体 }
+
+    1.匿名函数不允许单独存在
+    2.配合其他方式使用
+      2.1 函数表达式
+      2.2 自调动函数
+      2.3 作为别的参数的函数
+      2.4 作为事件处理程序
+*/
+
+
+
+/* 函数表达式 */
+// var getSum = function(a,b){
+//   return a + b;
+// }
+
+/* 自调用(自执行)函数
+     - 自动调用的函数
+
+    (匿名函数)();
+
+    暂时没什么用
+      - 主要是我们后期封装一些代码的时候使用的
+*/
+
+// (function (){
+//   console.log(1);
+// })();
+
+// 匿名函数作为事件处理程序 - 过几天会学
+// 得到这个div
+var div = document.querySelector('.box');
+// console.log(div);
+// 给这个div注册事件
+div.onclick = function(){
+  alert('你好');
+}
+
+</script>
+</html>

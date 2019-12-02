@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="box">
+      <h2>标题1</h2>
+      <p class="son">段落1</p>
+      <p class="son">段落2</p>
+      <p class="son">段落3</p>
+      <!-- <p class="son">段落4</p> -->
+    </div>
+  </body>
+  <script>
+    let box = document.querySelector(".box");
+   
+    // box.onclick = function(e) {
+    //   son.forEach(function(e) {
+    //     e.onclick = function() {
+    //       this.style.backgroundColor = "red";
+    //     };
+    //   });
+    // };
+    console.log(box);
+    box.addEventListener('click',function(e){
+        if(e.target.nodeName ==='P'){
+          this.style.backgroundColor = "red";
+        }
+    })
+  </script>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+
+</body>
+<script>
+/* 作用域链
+    - 决定了变量是哪一个的规律 - 变量的访问规则
+
+    - 1.如果当前作用域内部有变量，优先使用当前作用域的变量
+    - 2.如果当前作用域没有对应的变量，会往上一层作用域查找，直到找到一个离我最近的变量
+    - 3.如果找到全局作用域，还是没有，就会报错
+*/
+
+var a = 10;
+function f1(){
+  var a = 20;
+  console.log(a);
+  function f2(){
+    console.log(a);
+  }
+  f2();
+}
+f1();
+
+</script>
+</html>

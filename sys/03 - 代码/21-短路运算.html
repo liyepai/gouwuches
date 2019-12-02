@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+
+</body>
+<script>
+/*
+  短路运算
+    复习逻辑运算
+      && , 什么情况下为true - 两边条件都成立，两边都是true
+      || , 只要有一边是true，整个结果就是true
+*/
+
+/* 短路运算
+    其实就是逻辑运算符的真正用法
+*/
+/* 逻辑或的短路
+    如果左边转换为布尔是true，就不管右边了
+    如果左边转换为布尔是false，就会得到右边
+*/
+// console.log( 5 || 8 );
+// console.log( 0 || 8 );
+/* 逻辑或左边是true了，和右边就没有关系了 ， 如果左边是false，整个结果就取决于右边 */
+
+/* 逻辑与
+    如果左边转换为布尔是true,会得到右边
+    如果左边转换为布尔是false，会得到左边
+*/
+// console.log( 5 && 8  );
+// console.log( 0 && 8  );
+/* 逻辑与的左边如果是true，就取决于右边， 如果左边是false，和右边就没有关系了*/
+
+/* 用法 */
+/* 使用逻辑或给函数设置默认参数 */
+// 写一个函数求三个数的和
+function fn(a,b,c){
+  a = a || 0;
+  b = b || 0;
+  c = c || 0;
+  return a + b + c;
+}
+//希望第三个参数可以被省略，也能够得到正确的结果
+// console.log(fn(10,20));
+// console.log(fn(10,20,30));
+
+function f2(a,b,c){
+  a = a || 1;
+  b = b || 1;
+  c = c || 1;
+  return a * b *c;
+}
+
+
+/* 逻辑与的使用 */
+
+function f3(fn){
+  // fn 此时是一个函数
+  // 函数可以被调用
+  // if(typeof fn === 'function'){
+  //   fn();
+  // }
+
+  // 如果参数没有传递，可以使用逻辑与的短路解决
+  fn && fn();
+}
+
+function f4(){
+  console.log(123);
+}
+
+f3(f4);
+
+// f3(123);
+
+// f3();
+
+
+</script>
+</html>

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>五角星评分案例</title>
+    <style>
+      * {
+        padding: 0;
+        margin: 0;
+      }
+
+      .comment {
+        font-size: 40px;
+        color: red;
+      }
+
+      .comment li {
+        float: left;
+        cursor: pointer;
+      }
+
+      ul {
+        list-style: none;
+      }
+    </style>
+  </head>
+
+  <body>
+    <ul class="comment">
+      <li>☆</li>
+      <li>☆</li>
+      <li>☆</li>
+      <li>☆</li>
+      <li>☆</li>
+    </ul>
+  </body>
+  <script src="./jquery/jquery-2.2.2.js"></script>
+  <script>
+    /* 效果： 1 鼠标移入，我和左边的都是实心的，2，鼠标移出，恢复上一次评分,点击，把我点击的和左边的固定实心的 */
+    let lis = $(".comment>li");
+
+    lis
+      .on("mouseover", function() {
+        //先确定自己的索引位置
+        let sy = $(this).index();
+        //让当前索引的左边  都为实心  在循环里这样赋
+        lis.each(function(i, e) {
+          if (i <= sy) {
+            //如果当前的索引小于或者等于鼠标移入的索引，那么就让他为实心，遍历从0遍历 如果符合条件就让他实心
+            lis.eq(i).text("★");
+          } else {
+            lis.eq(i).text("☆");
+          }
+        });
+      })
+      //鼠标移出时，让他保留上次的分数，这里的分数是另外一个事件：点击下去 当前的对象和对象之前的li都为实心
+      //鼠标移出时，保留上次点击事件下的分数为实心
+      .on("mouseout", function() {
+        //让鼠标移出时，让他恢复到上次点击的分数fs位置
+        lis.each(function(i, e) {
+          if (i < fs) {
+            lis.eq(i).text("★");
+          } else {
+            lis.eq(i).text("☆");
+          }
+        });
+    
+      })
+
+      //   //确定分数
+      .on("click", function() {
+        //怎么确定当前分数是几呢？  分数是从1开始记，而这个数组是从0开始记
+        fs = $(this).index() + 1;
+        console.log(fs);
+      });
+    //定义一个分数  可全局共用
+    let fs = 0;
+  </script>
+</html>

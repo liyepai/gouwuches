@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    .box {
+      width: 100px;
+      height: 100px;
+      background-color: red;
+    }
+  </style>
+</head>
+<body>
+<div class="box"></div>
+</body>
+<script>
+/*
+  在一个页面里面，有两个功能，两个功能都比较庞大，一个人做起来很慢
+  把两个功能分给两个同事来做
+    a同事负责一部分
+      a.js
+    b同事负责另一部分
+      b.js
+    两个js都要在当前的页面使用
+
+      如果两个同事的代码，都是全局变量，后面引入的js，会把之前的引入的js的同名变量覆盖了  ———— 变量污染
+
+    我们可以使用局部作用域来避免变量污染
+      使用一个自调用函数来实现
+*/
+</script>
+<script src="./17-a.js"></script>
+<script src="./17-b.js"></script>
+<script>
+// console.log(a);
+</script>
+</html>

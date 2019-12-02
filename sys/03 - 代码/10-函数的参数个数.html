@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+
+</body>
+<script>
+// /* 求三个数的和的函数 */
+// function f1(a,b,c){
+//   return a + b + c;
+// }
+// // console.log(f1(10,20,30));
+
+// /* 求4个数的和 */
+// function f2(a,b,c,d){
+//   return a + b + c + d;
+// }
+
+/* 如果每次要求多个数字的和，都要写一个和数字个数对应的函数，就太麻烦了 */
+/* js里面的参数个数，是有一个技巧的 */
+
+/* js里面的形参和实参 */
+/* 形参
+    - 形式参数
+    - 在定义函数的时候，写的参数，就叫形式参数
+  实参
+    - 实际参数
+    - 在调用函数的时候，实际参与函数执行的数据，就叫实参
+ */
+
+// //a,b,c都是形式参数
+// function fn(a,b,c){
+
+// }
+// // 10,20,30就是实参
+// fn(10,20,30);
+
+/* js里面的形参个数和实参个数是可以不一致的 */
+// function fn(a){
+//   console.log(a);
+// }
+// fn(10,20,30);
+
+/* 如果想要得到所有的实参，有一个技巧 */
+function fn(){
+  /* 函数里面有一个东西，可以获取所有的实参 arguments */
+  console.log(arguments);
+  /*
+    1.这个arguments伪数组，不需要声明，只需要在函数中直接使用
+    2.只能在函数里面使用
+    3.功能就是获取所有的实参
+  */
+}
+
+// fn(10);
+// fn(10,20);
+// fn(10,20,30);
+
+/* 利用arguments实现不定个数参数的函数 */
+/* 实现求多个数字的和的函数 */
+function f1(){
+  // 只要得到所有的实参，把所有的实参相加，就是实现了多个数字的和
+  // console.log(arguments);
+  // 遍历伪数组，把伪数组里面的每个元素相加
+  var sum = 0;
+  for(var i = 0; i < arguments.length;i++){
+    sum += arguments[i];
+  }
+  return sum;
+}
+
+console.log(f1(10,20,30));
+console.log(f1(10,20,30,40,50,60));
+
+
+</script>
+</html>

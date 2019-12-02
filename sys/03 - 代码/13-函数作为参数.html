@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+
+</body>
+<script>
+/*
+  匿名函数可以作为另一个函数的参数
+
+    - 什么东西可以作为参数
+      - 只要是被包含在数据类型里面的东西，都可以作为参数
+      - 函数也是一种数据类型，而且是一种复杂数据类型
+*/
+// function fn(){
+
+// }
+
+// fn(1,2);
+// fn('abc','def');
+// fn(true,false);
+// fn(null,undefined);
+// fn(abc);
+
+/* 证明函数也可以作为 另一个函数的参数 */
+// function f1(){
+
+// }
+// function f2(){}
+// f1(f2);
+// /* 猜测函数也是数据类型的包含的东西 */
+// console.log(typeof 1);
+// console.log(typeof 'abc');
+// console.log(typeof true);
+// console.log(typeof f2);
+
+
+// 证明匿名函数可以作为另一个函数的参数
+function f1(){
+
+}
+f1(function (){});
+
+</script>
+</html>

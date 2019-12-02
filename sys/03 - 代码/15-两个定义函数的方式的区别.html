@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+
+</body>
+<script>
+/*
+  作用域
+  预解析
+
+  定义函数有两个方式，有什么不同？
+    关键字
+      function 函数名(){}
+    函数表达式
+      var 函数名 = function(){}
+*/
+
+/* 使用关键字声明的函数，可以在声明之前就直接使用 */
+f1();
+function f1(){
+  console.log(123);
+}
+f1();
+
+/* 函数表达式就必须先声明，再来使用 */
+f2();
+var f2 = function(){
+  console.log(456);
+}
+f2();
+</script>
+</html>

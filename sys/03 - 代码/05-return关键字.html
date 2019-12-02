@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+
+</body>
+<script>
+/*
+  return 关键字
+    作用1 ： 修改函数的返回值
+    作用2 ： 终止函数的执行
+*/
+
+/* 使用return修改函数的返回值 */
+function fn(){
+  // return 1;
+  return 'abc';
+}
+var result = fn();
+// console.log(result);
+
+
+/* return关键字可以终止函数的执行 */
+function f2(){
+  console.log(1);
+  console.log(2);
+  return 1;
+  console.log(3);
+  console.log(4);
+}
+
+f2();
+
+function f3(){
+  console.log(1);
+  console.log(2);
+  return;
+  console.log(3);
+  console.log(4);
+}
+
+var res = f3();
+console.log(res);
+
+</script>
+</html>

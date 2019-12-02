@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+
+</body>
+<script>
+/* 观察下面的代码，说出执行结果 */
+/*
+  会把变量的声明和函数的声明提升到  “当前作用域” 的最顶端
+  变量的赋值和函数的调用还是按照原来的顺序
+*/
+var num = 10;
+fun();
+function fun() {
+  console.log(num);
+  var num = 20;
+  console.log(num);
+}
+
+// /* 因为有两个作用域，会分别进行两次预解析 */
+// // 全局作用域的预解析
+// var num ;
+// function fun() {
+//   console.log(num);
+//   var num = 20;
+// }
+// num = 10;
+// fun();
+// // 局部作用域的预解析
+// function fun() {
+//   var num;
+//   console.log(num);
+//   num = 20;
+//   console.log(num);
+// }
+
+</script>
+</html>

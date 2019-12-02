@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+
+</body>
+<script>
+/*
+  所有的简单类型(值类型)赋值的时候，都是把值复制一份，再赋值
+*/
+
+// var a = 10;
+// var b = a;
+// b = 20;
+// console.log(a,b);
+
+var a = 10;
+var b = 20;
+function fn(x,y){
+  x = x + y;
+  console.log(x,y); // 30,20
+}
+fn(a,b);
+console.log(a,b); // 10,20
+
+</script>
+</html>

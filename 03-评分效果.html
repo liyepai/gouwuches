@@ -1,0 +1,81 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>五角星评分案例</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        .comment {
+            font-size: 40px;
+            color: red;
+        }
+
+        .comment li {
+            float: left;
+            cursor: pointer;
+        }
+
+        ul {
+            list-style: none;
+        }
+    </style>
+</head>
+
+<body>
+
+    <ul class="comment">
+        <li>☆</li>
+        <li>☆</li>
+        <li>☆</li>
+        <li>☆</li>
+        <li>☆</li>
+    </ul>
+
+</body>
+<script src="./jquery/jquery-2.2.2.js"></script>
+<script>
+  // ★
+  /* 效果： 1 鼠标移入，我和左边的都是实心的，2，鼠标移出，恢复上一次评分,点击，把我点击的和左边的固定实心的 */
+let lis = $('.comment > li');
+lis.on('mouseover',function(){
+  // 获取自己的索引
+  let current = $(this).index();
+  // 把我和我的左边的都变成实心，把右边的都变成空心
+  // 只要修改我和我左边的li，都是  ★  文字，把右边的都修改为 ☆ 文字
+  for(let i =0; i < lis.length; i++){
+    //怎么知道哪些是我的左边 ， 索引到我当前为止
+    if(i <= current){
+      lis.eq(i).text('★');
+    }else {
+      lis.eq(i).text('☆');
+    }
+  }
+})
+// 鼠标移出，恢复上一次的评分
+.on('mouseout',function(){
+  // 只需要把分数代表的元素和它的左边变成实心，把分数之后的元素变成空心
+  for(let i = 0; i < lis.length; i++){
+    // 如果i小于分数，就是实心的
+    if(i < currentScore){
+      lis.eq(i).text('★');
+    }else {
+      lis.eq(i).text('☆');
+    }
+  }
+})
+// 点击的时候，确定评分是多少
+.on('click',function(){
+  // 点击的元素的索引+1就是分数
+  currentScore = $(this).index() + 1;
+})
+// 写一个大家都能够使用的变量，表示当前的分数
+let currentScore = 0;
+</script>
+</html>

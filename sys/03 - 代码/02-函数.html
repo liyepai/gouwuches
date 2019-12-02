@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+
+<body>
+
+</body>
+<script>
+  /*
+    实现一个效果：
+      讲故事
+        从前有座山，山上有座庙
+        庙里的老和尚在给小和尚讲故事
+        讲的什么呢？
+  */
+
+  // // 第一次
+  // console.log('从前有座山，山上有座庙');
+  // console.log('庙里的老和尚在给小和尚讲故事');
+  // console.log('讲的什么呢？');
+  // // 第二次
+  // console.log('从前有座山，山上有座庙');
+  // console.log('庙里的老和尚在给小和尚讲故事');
+  // console.log('讲的什么呢？');
+  // // 第三次
+  // console.log('从前有座山，山上有座庙');
+  // console.log('庙里的老和尚在给小和尚讲故事');
+  // console.log('讲的什么呢？');
+
+  /* 重复的代码可以使用循环来实现 */
+  // for (var i = 0; i < 5; i++) {
+  //   console.log('从前有座山，山上有座庙');
+  //   console.log('庙里的老和尚在给小和尚讲故事');
+  //   console.log('讲的什么呢？');
+  // }
+
+  /* 讲故事可能要分时机，不是一开始几把故事都说了 */
+  /* 希望这段代码在我们需要的时候才执行，就可以使用函数解决 */
+  /*
+    函数的基本语法
+      function 函数名(){
+        函数体 - 就是你希望要重复使用的代码
+      }
+  */
+  function tellStory() {
+    console.log('从前有座山，山上有座庙');
+    console.log('庙里的老和尚在给小和尚讲故事');
+    console.log('讲的什么呢？');
+  }
+  /* 函数的特点： 函数声明(定义)之后，里面的代码是不会主动执行的，需要我们手动的调用才可以执行 */
+
+  /* 函数调用的语法
+      函数名()
+  */
+  tellStory();
+  tellStory();
+  tellStory();
+</script>
+
+</html>

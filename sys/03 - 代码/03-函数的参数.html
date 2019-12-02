@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+
+<body>
+
+</body>
+<script>
+  /* 我们之前已经把将故事的代码封装到了函数里面
+      新的需求：
+        希望老和尚和小和尚有名字
+  */
+
+  /* 先给小和尚取名字 */
+  // var name1 = '虚竹';
+  // function tellStory() {
+  //   console.log('从前有座山，山上有座庙');
+  //   console.log('庙里的老和尚在给'+ name1 +'讲故事');
+  //   console.log('讲的什么呢？');
+  // }
+
+  // tellStory();
+  /* 向让小何上的名字可以在每次使用的时候可以更改
+      函数的参数
+        function 函数名(参数1,参数2,参数3...){
+          函数体
+        }
+  */
+
+  // function tellStory(name1) {
+  //   console.log('从前有座山，山上有座庙');
+  //   console.log('庙里的老和尚在给'+name1+'讲故事');
+  //   console.log('讲的什么呢？');
+  // }
+
+  /* 当我们调用函数的时候，每次给参数赋值就行 */
+  /*
+    函数名(实际的数据1,实际的数据2...)
+  */
+  // tellStory('虚竹');
+
+  /* 让小和尚发生改变 */
+  // tellStory('法海');
+
+  /* 让老和尚也可以改变 */
+  function tellStory(name1,name2) {
+    console.log('从前有座山，山上有座庙');
+    console.log('庙里的'+ name2 +'在给'+name1+'讲故事');
+    console.log('讲的什么呢？');
+  }
+  // 在使用这个函数的时候，再给每个不同的参数设置不同的数据即可
+  tellStory('虚竹','一灯');
+  tellStory('法海','虚竹'); // 写实际的数据的时候，需要严格按照顺序来写
+</script>
+
+</html>

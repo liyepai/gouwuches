@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>五角星评分案例</title>
+    <style>
+      * {
+        padding: 0;
+        margin: 0;
+      }
+
+      .comment {
+        font-size: 40px;
+        color: red;
+      }
+
+      .comment li {
+        float: left;
+        cursor: pointer;
+      }
+
+      ul {
+        list-style: none;
+      }
+    </style>
+  </head>
+
+  <body>
+    <ul class="comment">
+      <li>☆</li>
+      <li>☆</li>
+      <li>☆</li>
+      <li>☆</li>
+      <li>☆</li>
+    </ul>
+  </body>
+  <script src="./jquery/jquery-2.2.2.js"></script>
+  <script>
+    //鼠标移入，让空心变实心
+    //★
+    let lis = $(".comment>li");
+
+    lis
+      .on("mouseover", function() {
+        let sy = $(this).index() + 1; //这个索引从0开始  最大只有四 所有得加一
+        lis.each(function(i, e) {
+          if (i < sy) {
+            $(e).text("★");
+          } else {
+            $(e).text("☆"); //你不要以为人家本来就是空心的就可以不要设置  如果没设置  定好分数后 再一进去就不会变空心了
+          }
+          // console.log(e,i)
+          //可以使用三元表达式简便点
+          // i < sy ? $(e).text("★") : $(e).text("☆");
+        });
+    
+      })
+     
+      .on("mouseout", function() {
+        lis.each(function(i, e) {
+          // if (i < fs) {
+          //   $(e).text("★");
+          // } else {
+          //   $(e).text("☆");
+          // }
+          i < fs ? $(e).text("★") : $(e).text("☆");
+        });
+      })
+      .on("click", function() {
+        //得出当前索引  分数从1 开始  所有得加一
+        fs = $(this).index() + 1;
+      });
+    //定一个分数索引  外面的才可以共用
+    let fs = 0;
+  </script>
+</html>

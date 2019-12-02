@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+
+<body>
+
+</body>
+<script>
+  /* 使用函数求 n~m 的和 */
+  // 先使用几个实际的数据先把过程写出来
+
+  // // 1~10
+  // var sum = 0;
+  // for (var i = 1; i <= 10; i++) {
+  //   sum += i;
+  // }
+  // // 10 ~20
+  // var sum = 0;
+  // for (var i = 10; i <= 20; i++) {
+  //   sum += i;
+  // }
+
+  // 分析过程里面，哪些是重复的，哪些是会变的
+  // 写一个函数的语法
+  function getSum(n,m) {
+    var sum = 0;
+    for (var i = n; i <= m; i++) {
+      sum += i;
+    }
+    return sum;
+  }
+  // 函数的返回值 - 函数的执行结果 // 注意，如果想要得到函数的返回值，需要在函数调用的前面先使用一个变量存储起来
+  var b = getSum(10,20);
+  console.log(b);
+
+  // 执行结果 , 表达式或者是代码执行过后，有一个结果，就是执行结果
+  var a = 1 + 1;
+  console.log(a);
+
+</script>
+
+</html>

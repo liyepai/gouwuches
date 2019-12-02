@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+     .box{
+         width: 200px;
+         height: 200px;
+         background-color: red;
+     }
+    
+    
+    </style>
+</head>
+<body>
+    <div class="box" > </div>
+</body>
+<script src="./jquery/jquery-2.2.2.js"></script>
+<script src="./jquery/jquery.color.js"></script>
+
+
+<!-- 在没引入插件之前，给他做动画的时候  修改他的颜色  是不会改变他的颜色的 -->
+<!-- 得引入这个color。js插件 -->
+<script>
+$('.box').on('click',function(){
+    $(this).animate({
+        width:400,
+        height:400,
+        backgroundColor:'yellow'
+    },3000)
+})
+
+
+</script>
+</html>

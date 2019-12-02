@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+
+</body>
+<script>
+/* 使用函数求圆的面积
+
+      圆的面积公式
+        圆的面积 = 圆周率 * 半径的平方
+*/
+// /* 使用实际数据写过程 */
+// // 半径是可变
+// // 半径是5
+// var area = 3.14 * 5 * 5;
+// // 半径是10
+// var area = 3.14 * 10 * 10;
+
+/* 分析得出，半径会变，要作为参数，其他不变 */
+// function getArea(r){
+//   var area = 3.14 * r * r;
+//   return area;
+// }
+
+// var a1 = getArea(5);
+// console.log(a1);
+// var a2 = getArea(10);
+// console.log(a2);
+
+
+
+// 函数里面 圆周率本来是一个 无限不循环的小数
+// js里面提供了一个圆周率 Math.PI
+
+function getArea(r){
+  var area = 3.14 * r * r;
+  return area;
+}
+
+console.log(Math.PI);
+
+/* js里面提供的小数保留指定的位数 */
+// 数字.toFiexd(位数)
+// console.log(Math.PI.toFixed(2));
+// console.log(Math.PI.toFixed(3));
+// console.log(Math.PI.toFixed(4));
+
+/* 求一个数字的多次平方 */
+/* js里面提供了一个求多次幂的方法 */
+// Math.pow(底数,幂数)
+// 2的3次方
+// console.log(Math.pow(2,3));
+// console.log(Math.pow(3,3));
+// console.log(Math.pow(10,50));
+
+/* 另外的使用技巧 */
+/* 求4的开平方 */
+// 2的平方是4,4的开平方就是 正负2
+/* 8开平方 */
+// console.log(Math.pow(8,1/2));
+// console.log(Math.pow(8,1/3));
+
+
+</script>
+
+</html>

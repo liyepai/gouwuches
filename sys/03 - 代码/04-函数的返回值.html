@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+
+</body>
+<script>
+/* 需求：
+    使用一个函数，实现求两个数字的和
+ */
+
+// function getSum(num1,num2){
+//   var sum = num1 + num2;
+//   // console.log(sum);
+// }
+// getSum(10,20);
+
+/* 现在我们不仅仅是想要输出两个数字的和
+  我们想要得到两个数字相加的和，然后在后面的代码中进行使用
+
+    函数的返回值
+      函数的返回值指的是函数的执行结果
+        1.函数默认的返回值是undefined
+        2.函数的返回值可以通过return关键字修改
+
+  修改函数的返回值
+    function 函数名(){
+
+      函数体
+      return 你想要返回的数据
+    }
+*/
+
+function getSum(num1,num2){
+  var sum = num1 + num2;
+  // 想要把两个数字相加的和变成函数的返回值
+  return sum;
+}
+
+var result = getSum(10,20);
+console.log(result);
+</script>
+</html>

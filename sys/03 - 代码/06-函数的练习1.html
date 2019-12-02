@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+
+<body>
+
+</body>
+<script>
+  /* 求1-n之间所有数的和
+
+    使用函数求1~n的整数和
+
+    写函数的步骤：
+      1. 分析需求，使用几个实际的数据，把过程先写出来
+      2. 分析过程中哪些代码可以重复使用，把可以重复使用的代码，放到函数体里面
+      3. 分析过程中哪些数据是会产生变化的，把这些会产生变化的数据，作为参数、
+      4. 按照我们学习过的函数的语法写代码
+      5. 考虑是否需要写return
+  */
+  // /* 先求 1~10 的整数和 */
+  // var sum = 0;
+  // for (var i = 1; i <= 10; i++) {
+  //   sum += i;
+  // }
+  // /* 求1~20的整数和 */
+  // var sum = 0;
+  // for (var i = 1; i <= 20; i++) {
+  //   sum += i;
+  // }
+
+  // /* 求1~100的整数和 */
+  // var sum = 0;
+  // for (var i = 1; i <= 100; i++) {
+  //   sum += i;
+  // }
+
+  /* 发现三个过程，只有上限是变化的，把上限作为参数，把其余的部分作为函数体,就可以按照函数的语法写代码了 */
+  function getSum(n) {
+    var sum = 0;
+    for (var i = 1; i <= n; i++) {
+      sum += i;
+    }
+    return sum;
+  }
+
+  var s1 = getSum(10);
+  console.log(s1);
+  var s2 = getSum(100);
+  console.log(s2);
+
+</script>
+
+</html>
